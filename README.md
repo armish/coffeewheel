@@ -1,4 +1,11 @@
 # An R Interface to D3-based Coffee Wheel
+This is an [htmlwidgets](http://www.htmlwidgets.org/)-based visualization tool for hierarchical data.
+It is zoomable, meaning that you can interact with the hierarchy and zoom in/out accordingly.
+The visualization is D3-based and the actual wheel visualization code is adapted from:
+
+https://www.jasondavies.com/coffee-wheel/
+
+Enjoy!
 
 ## Install
 This package is currently not on CRAN, but you can install it from GitHub via `devtools`:
