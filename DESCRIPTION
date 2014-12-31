@@ -1,8 +1,12 @@
 Package: coffeewheel
-Title: What the package does (one line)
+Title: Radial space-filling visualisation of hierarchical data
 Version: 0.1
-Authors@R: "First Last <first.last@example.com> [aut, cre]"
-Description: What the package does (one paragraph)
-Depends: R (>= 3.1.2)
-License: What license is it under?
+Authors@R: "B. Arman Aksoy <arman@aksoy.org> [aut, cre]"
+Description: This is an example of using d3.layout.partition to generate a zoomable sunburst tree derived from hierarchical data. A sunburst tree is a radial space-filling visualisation, analagous to an icicle tree. Adapted from Jason Davies' example into R as a htmlwidget.
+Depends: R (>= 3.0.0)
+URL: https://github.com/armish/coffeewheel
+Imports: htmlwidgets (>= 0.2.2)
+Enhances: knitr, shiny
+License: Public Domain
+VignetteBuilder: knitr
 LazyData: true

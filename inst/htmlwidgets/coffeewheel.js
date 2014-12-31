@@ -5,21 +5,21 @@ HTMLWidgets.widget({
   type: 'output',
 
   initialize: function(el, width, height) {
-
     return {
-      // TODO: add instance fields as required
+      el: el,
+      width: width,
+      height: height
     }
-
   },
 
   renderValue: function(el, x, instance) {
-
-    el.innerText = x.message;
-
+    initializeCoffeeWheel(x, el, instance.width);
+    this.x = x;
   },
 
   resize: function(el, width, height, instance) {
-
+    el.innerHTML = "";
+    initializeCoffeeWheel(this.x, el, width);
   }
 
 });
