@@ -1,11 +1,11 @@
-# CoffeeWheel: An R Interface to Coffee Wheel 
+# An R Interface to D3-based Coffee Wheel
 
 ## Install
 This package is currently not on CRAN, but you can install it from GitHub via `devtools`:
 
 ```r
 library("devtools");
-devtools::install_github("armish/coffeewheel")
+devtools::install_github("armish/coffeewheel");
 ```
 
 ## Sample Plotting
