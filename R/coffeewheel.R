@@ -5,13 +5,16 @@
 #' @import htmlwidgets
 #'
 #' @export
-coffeewheel <- function(treeData, size="400px") {
-  width <- height <- size;
+coffeewheel <- function(treeData, width="400", height="400", main="") {
+  x <- list(
+    treeData = treeData,
+    main = main
+  );
 
   # create widget
   htmlwidgets::createWidget(
     name = 'coffeewheel',
-    treeData,
+    x,
     width = width,
     height = height,
     package = 'coffeewheel'
@@ -21,7 +24,7 @@ coffeewheel <- function(treeData, size="400px") {
 #' Widget output function for use in Shiny
 #'
 #' @export
-coffeewheelOutput <- function(outputId, width = '400px', height = '400px') {
+coffeewheelOutput <- function(outputId, width = '400', height = '400') {
   shinyWidgetOutput(outputId, 'coffeewheel', width, height, package = 'coffeewheel');
 }
 

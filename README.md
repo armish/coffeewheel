@@ -18,7 +18,7 @@ devtools::install_github("armish/coffeewheel");
 ## Sample Plotting
 ```r
 library("coffeewheel");
-coffeewheel(sampleWheelData, size="500");
+coffeewheel(sampleWheelData, width=500, height=500, main="Sample Wheel Title");
 ```
 
 ![Zoomable Wheel](./ZoomableCoffeeWheel.gif)
