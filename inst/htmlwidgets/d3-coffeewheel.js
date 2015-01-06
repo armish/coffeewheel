@@ -24,7 +24,11 @@ var initializeCoffeeWheel = function(data, el, width, height, mainTitle) {
 
     var partition = d3.layout.partition()
         .sort(null)
-        .value(function(d) { return 5.8 - d.depth; });
+        .value(function(d) {
+	        //return 5.8 - d.depth; 
+	        return d.value;
+        	//return d.depth == 0 ? 1 : 1/d.parent.children.size; 
+        });
 
     var arc = d3.svg.arc()
         .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
@@ -80,6 +84,23 @@ var initializeCoffeeWheel = function(data, el, width, height, mainTitle) {
     }
 
     (function(json) {
+      var assignSizes = function(node) {
+      	if(node.children == undefined || node.children.length < 1) {
+      		return;
+      	} else {
+      		var numOfChilds = node.children.length
+      		for(var ci=0; ci < numOfChilds; ci++) {
+      			var childNode = node.children[ci];
+      			childNode.value = 1.0/numOfChilds;
+      			assignSizes(childNode);
+      		}
+      	}
+      };
+
+      for(var i=0; i < json.length; i++) {
+      	assignSizes(json[i]);
+      }
+
       var nodes = partition.nodes({children: json});
 
       var path = vis.selectAll("path").data(nodes);
