@@ -17,11 +17,6 @@ coffeewheel <- function(treeData, width=400, height=400, main="") {
     x,
     width = width,
     height = height,
-    sizingPolicy = htmlwidgets::sizingPolicy(
-      viewer.padding = 0,
-      viewer.paneHeight = height + 500,
-      browser.fill = TRUE
-    ),
     package = 'coffeewheel'
   );
 }
