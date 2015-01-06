@@ -1,5 +1,5 @@
 var initializeCoffeeWheel = function(data, el, width, height, mainTitle) {
-	  var minSize = Math.min(width, height);
+	  var minSize = Math.min(width, height)-20;
 
     var div = d3.select(el);
     if(mainTitle.length > 0) {
