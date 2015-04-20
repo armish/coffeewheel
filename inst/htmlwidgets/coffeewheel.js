@@ -13,13 +13,13 @@ HTMLWidgets.widget({
   },
 
   renderValue: function(el, x, instance) {
-    initializeCoffeeWheel(x.treeData, el, instance.width, instance.height, x.main);
+    initializeCoffeeWheel(x.treeData, el, instance.width, instance.height, x.partitionAttribute, x.main);
     instance["x"] = x;
   },
 
   resize: function(el, width, height, instance) {
     el.innerHTML = "";
-    initializeCoffeeWheel(instance.x.treeData, el, width, height, instance.x.main);
+    initializeCoffeeWheel(instance.x.treeData, el, width, height, instance.x.partitionAttribute, instance.x.main);
     instance.width = width;
     instance.height = height;
   }

@@ -5,10 +5,11 @@
 #' @import htmlwidgets
 #'
 #' @export
-coffeewheel <- function(treeData, width=400, height=400, main="") {
+coffeewheel <- function(treeData, width=400, height=400, main="", partitionAttribute="value") {
   x <- list(
     treeData = treeData,
-    main = main
+    main = main,
+    partitionAttribute = partitionAttribute
   );
 
   # create widget

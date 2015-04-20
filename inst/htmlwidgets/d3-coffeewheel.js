@@ -1,4 +1,4 @@
-var initializeCoffeeWheel = function(data, el, width, height, mainTitle) {
+var initializeCoffeeWheel = function(data, el, width, height, partitionAttribute, mainTitle) {
 	  var minSize = Math.min(width, height)-20;
 
     var div = d3.select(el);
@@ -27,9 +27,7 @@ var initializeCoffeeWheel = function(data, el, width, height, mainTitle) {
     var partition = d3.layout.partition()
         .sort(null)
         .value(function(d) {
-	        //return 5.8 - d.depth; 
-	        return d.value;
-        	//return d.depth == 0 ? 1 : 1/d.parent.children.size; 
+	        return d[partitionAttribute];
         });
 
     var arc = d3.svg.arc()
